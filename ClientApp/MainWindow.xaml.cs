@@ -21,7 +21,7 @@ namespace ClientApp
     public partial class MainWindow : Window
     {
 
-       
 
+        
     }
 }
