@@ -26,10 +26,8 @@ namespace ClientApp
 
        
 
-        // Event redirect
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            // Mediator pattern, forward event to VM
             WeakReferenceMessenger.Default.Send("MainWindowLoaded", "MainWindowLoaded");
         }
     }

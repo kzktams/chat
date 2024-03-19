@@ -1,4 +1,4 @@
-﻿using ClientApp.Service;
+﻿
 using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
 using Models;
@@ -17,7 +17,7 @@ namespace ClientApp.VM
     public class MainWindowViewModel: ObservableRecipient
     {
 
-        private string Sender { get; set; } = "";
+        public string Sender { get; set; } = "";
 
         private string inputText = "";
 

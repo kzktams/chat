@@ -11,27 +11,33 @@
     </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="19*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <ListBox ItemsSource="{Binding Messages}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <Label Content="{Binding SendDate}"></Label>
-                        <Label Content="{Binding Sender}"></Label>
-                        <Label Content="{Binding SentMessage}"></Label>
+                        <Label Content="{Binding SendDate}" ContentStringFormat="Date: {0}"></Label>
+                        <Label Content="{Binding Sender}" ContentStringFormat="Sender: {0}"></Label>
+                        <Label Content="{Binding SentMessage}" ContentStringFormat="Message: {0}"></Label>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Grid Grid.Row="1">
+        <Label Background="Beige" Grid.Row="1"></Label>
+        <TextBox Grid.Row="1" Text="{Binding Sender, UpdateSourceTrigger=PropertyChanged}" Margin="47,10,10,10"></TextBox>
+        <Label Grid.Row="1" HorizontalAlignment="Left" Content="Név: " Background="LightBlue" Margin="10"></Label>
+        <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="9*"/>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
-            <TextBox Text="{Binding InputText, UpdateSourceTrigger=PropertyChanged}"/>
-            <Button Grid.Column="1" Content="Send" Command="{Binding SendCommand}"/>
+            
+            <TextBox Text="{Binding InputText, UpdateSourceTrigger=PropertyChanged}" Margin="10"/>
+            <Label Background="Beige" Grid.Column="1"></Label>
+            <Button Grid.Column="1" Content="Send" Command="{Binding SendCommand}" Margin="10"/>
         </Grid>
     </Grid>
 </Window>

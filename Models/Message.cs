@@ -10,7 +10,7 @@ namespace Models
     {
         public string Sender { get; set; }
 
-        public DateTime SendDate { get; set; } = DateTime.Now;
+        public string SendDate { get; set; } = DateTime.Now.ToString("HH:mm");
 
         public string SentMessage { get; set; }
 
