@@ -14,7 +14,7 @@ namespace Workshop05.Controllers
 
         IHubContext<SignalRHub> hub;
 
-        private static List<Message> messages = new List<Message>();
+        List<Message> messages = new List<Message>();
 
         public MessageController(IHubContext<SignalRHub> hub)
         {
