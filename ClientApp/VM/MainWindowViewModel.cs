@@ -17,7 +17,7 @@ namespace ClientApp.VM
     public class MainWindowViewModel: ObservableRecipient
     {
 
-        public string Sender { get; set; } = "";
+        public string Sender { get; set; }
 
         private string inputText = "";
 
@@ -50,10 +50,14 @@ namespace ClientApp.VM
             if (!IsInDesignMode)
             {
                 Messages = new RestCollection<Message>("http://localhost:44869/", "message", "hub");
-                SendCommand = new RelayCommand(() => {
-                    Messages.Add(new Message() { Sender = this.Sender, SentMessage = InputText });
+                SendCommand = new RelayCommand(
+                    () => {
+                    Messages.Add(new Message() { Sender = this.Sender, SentMessage = InputText 
+                    });
                     InputText = "";
-                }, () => { return InputText != null && InputText != ""; });
+                }, () => {
+                    return InputText != null && InputText != "" && Sender != null && Sender != ""; 
+                });
 
 
             }
