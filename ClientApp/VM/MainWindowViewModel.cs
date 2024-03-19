@@ -24,7 +24,10 @@ namespace ClientApp.VM
         public string InputText
         {
             get { return inputText; }
-            set { inputText = value; OnPropertyChanged(); (SendCommand as RelayCommand).NotifyCanExecuteChanged(); }
+            set { 
+                inputText = value;
+                OnPropertyChanged(); 
+                (SendCommand as RelayCommand).NotifyCanExecuteChanged(); }
         }
 
 

@@ -26,9 +26,5 @@ namespace ClientApp
 
        
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            WeakReferenceMessenger.Default.Send("MainWindowLoaded", "MainWindowLoaded");
-        }
     }
 }
