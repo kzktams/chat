@@ -18,16 +18,18 @@
         <ListBox ItemsSource="{Binding Messages}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel>
-                        <Label Content="{Binding SendDate}" ContentStringFormat="Date: {0}"></Label>
-                        <Label Content="{Binding Sender}" ContentStringFormat="Sender: {0}"></Label>
-                        <Label Content="{Binding SentMessage}" ContentStringFormat="Message: {0}"></Label>
-                    </StackPanel>
+                    <Border BorderBrush="Bisque" BorderThickness="1">
+                        <StackPanel>
+                            <Label Content="{Binding SendDate}" ContentStringFormat="Date: {0}"></Label>
+                            <Label Content="{Binding Sender}" ContentStringFormat="Sender: {0}"></Label>
+                            <Label Content="{Binding SentMessage}" ContentStringFormat="Message: {0}"></Label>
+                        </StackPanel>
+                    </Border>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
         <Label Background="Beige" Grid.Row="1"></Label>
-        <TextBox Grid.Row="1" Text="{Binding Sender, UpdateSourceTrigger=PropertyChanged}" Margin="47,10,10,10"></TextBox>
+        <TextBox Grid.Row="1" Text="{Binding Sender, UpdateSourceTrigger=PropertyChanged}" Margin="58,10,10,10"></TextBox>
         <Label Grid.Row="1" HorizontalAlignment="Left" Content="Name: " Background="LightBlue" Margin="10"></Label>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
