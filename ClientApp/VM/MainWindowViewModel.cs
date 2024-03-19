@@ -55,16 +55,10 @@ namespace ClientApp.VM
                     InputText = "";
                 }, () => { return InputText != null && InputText != ""; });
 
-                Messages.CollectionChanged += Messages_CollectionChanged;
 
-                
             }
         }
 
-        private void Messages_CollectionChanged(object? sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
-        {
-            this.Messenger.Send("Changed", "ChatChanged");
-        }
 
     }
 }
