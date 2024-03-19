@@ -18,9 +18,6 @@ using Workshop05.ClientApp;
 
 namespace ClientApp
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
 
