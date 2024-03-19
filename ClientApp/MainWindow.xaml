@@ -28,7 +28,7 @@
         </ListBox>
         <Label Background="Beige" Grid.Row="1"></Label>
         <TextBox Grid.Row="1" Text="{Binding Sender, UpdateSourceTrigger=PropertyChanged}" Margin="47,10,10,10"></TextBox>
-        <Label Grid.Row="1" HorizontalAlignment="Left" Content="Név: " Background="LightBlue" Margin="10"></Label>
+        <Label Grid.Row="1" HorizontalAlignment="Left" Content="Name: " Background="LightBlue" Margin="10"></Label>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="9*"/>
