@@ -24,15 +24,7 @@ namespace ClientApp
     public partial class MainWindow : Window
     {
 
-        public MainWindow()
-        {
-            InitializeComponent();
-            // Mediator pattern, better than hacky VM access from window
-            WeakReferenceMessenger.Default.Register<object, string, string>(this, "ChatChanged", (sender, args) =>
-            {
-                scrollviewer.ScrollToBottom();
-            });
-        }
+       
 
         // Event redirect
         private void Window_Loaded(object sender, RoutedEventArgs e)

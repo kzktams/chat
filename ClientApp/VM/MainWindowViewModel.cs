@@ -41,7 +41,6 @@ namespace ClientApp.VM
             }
         }
 
-        public INameService NameService { get; set; }
 
         public MainWindowViewModel()
         {
@@ -53,17 +52,9 @@ namespace ClientApp.VM
                     InputText = "";
                 }, () => { return InputText != null && InputText != ""; });
 
-                // Hidden dependency, sorry, quick solution, should be done /w IoC :)
-                NameService = new NameServiceViaWindow();
-
-                // Collection change event forward to code behind to scrollbar adjustment
                 Messages.CollectionChanged += Messages_CollectionChanged;
 
-                // Window Loaded event receiver
-                Messenger.Register<object, string, string>(this, "MainWindowLoaded", (recipient, msg) =>
-                {
-                    this.Sender = NameService.GetName();
-                });
+                
             }
         }
 

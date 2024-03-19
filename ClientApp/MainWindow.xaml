@@ -14,21 +14,17 @@
             <RowDefinition Height="19*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <ScrollViewer x:Name="scrollviewer" Grid.Row="0" VerticalScrollBarVisibility="Auto">
-            <ItemsControl x:Name="ic" ItemsSource="{Binding Messages}">
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <Border BorderBrush="Gray" BorderThickness="2">
-                            <StackPanel>
-                                <Label Content="{Binding SendDate}"/>
-                                <Label Content="{Binding Sender}"/>
-                                <Label Content="{Binding SentMessage}"/>
-                            </StackPanel>
-                        </Border>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
-        </ScrollViewer>
+        <ListBox ItemsSource="{Binding Messages}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <Label Content="{Binding SendDate}"></Label>
+                        <Label Content="{Binding Sender}"></Label>
+                        <Label Content="{Binding SentMessage}"></Label>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="9*"/>
